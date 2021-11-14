@@ -1,0 +1,158 @@
+INSERT COMMANDS FOR TESTING INCREMENTAL DATA
+
+STG_STORES:
+
+insert into eBooks2go.BLC_STORES (STORE_ID,STORE_NAME,STORE_ROYALTY) 
+VALUES ( 16, 'Mahi1',20 ),
+        ( 17, 'Mahi2',20 ),
+        ( 18, 'Mahi3',20 ),
+        ( 19, 'Mahi4',20 ),
+        ( 20, 'Mahi5',20 );
+        
+STG_STATES
+insert into eBooks2go.BLC_STATES (STATE_ID, COUNTRY_ID, STATE_NAME ) 
+VALUES 
+        (4001, 204, 'myplace'),
+        (4002, 205, 'myplace2'),
+        (4003, 206, 'myplace3'),
+        (4004, 207, 'myplace4'),
+        (4005, 208, 'myplace5');
+        
+STG_COUNTRIES
+insert into eBooks2go.BLC_COUNTRIES(COUNTRY_ID, COUNTRY_NAME, PHONE_CODE, COUNTRY_CODE) 
+VALUES 
+        (204, 'YOPLACE1', 8888, 'YP1'),
+        (205, 'YOPLACE2', 8889, 'YP2'),
+        (206, 'YOPLACE3', 8881, 'YP3'),
+        (207, 'YOPLACE4', 8882, 'YP4'),
+        (208, 'YOPLACE5', 8883, 'YP5');
+        
+STG_CRM_CUSTOMER
+insert into eBooks2go.CRM_Customer(Customer_id, Email_Address, Date_Created, Given_Name, Address1, Address2, Locality, Region, Postal_code, Country_code,  Phonenumber,EMAIL_STATUS) 
+VALUES 
+        (11620, 'catmaprat2@gmail.com', current_timestamp, 'JIM','1000 Smith St','','Dublin','OH',92235,137,'3362712343',''),
+        (11621, 'catmaprat2@gmail.com', current_timestamp, 'TIM','2000 Smith St','','COLUMBUS','OHIO',70831,137,'566-233-2234',''),
+        (11622, 'catmaprat3@gmail.com', current_timestamp, 'HIM','3000 Smith St','','SCHAUMBURG','ILLINOIS',60193,137,'630.347.8099',NULL),
+        (11623, 'catmaprat4@gmail.com', current_timestamp, 'LIM','4000 Smith St','','SALT LAKE CITY','UT',50025,137,'(275)016-0191',''),
+        (11624, 'abbarajus@gmail.com', current_timestamp, 'KIM','5000 Smith St','','BLOOMINGDALE','IL',60109,137,'+1 605437892',' ');
+            
+STG_SALESREPORTS
+insert into eBooks2go.BLC_SALESREPORTS(SALES_ID, DATE_OF_SALE, COUNTRY_OF_SALE, CUSTOMER_SHARE,DISTRIBUTION_ORDERINFO_ID, CUSTOMER_ID,  STORE_ID, FORMAT)
+VALUES 
+        (122222, current_timestamp, 'USA', 0.00, 55, 2345, 9, 'ePub'),
+        (122223, current_timestamp, 'USA', 0.00, 56, 2346, 3, 'ePub'),
+        (122224, current_timestamp, 'IN', 0.00, 57, 2347, 5, 'ePub'),
+        (122225, current_timestamp, 'NZ', 0.00, 58, 2348, 7, 'ePub'),
+        (122226, current_timestamp, 'AU', 0.00, 59, 2349, 13, 'ePub');
+
+STG_ORDER
+insert into eBooks2go.BLC_ORDER(ORDER_ID, Date_Created, CUSTOMER_ID)
+VALUES 
+        (9000, current_timestamp, 200),
+        (9001, current_timestamp, 500),
+        (9002, current_timestamp, 1000),
+        (9003, current_timestamp, 3522),
+        (9004, current_timestamp, 15);
+
+stg_BLC_DISTRIBUTION_ORDERINFO
+insert into eBooks2go.BLC_DISTRIBUTION_ORDERINFO(DISTRIBUTION_ORDERINFO_ID, isbn, DISTRIBUTION_METADATA_ID,list_price, ID)
+VALUES 
+        (15000, 123456789,96,0.00, 700),
+        (15001,123456789, 26,0.00, 250),
+        (15002,123456789, 52,0.00, 5),
+        (15003,123456789, 3, 0.00,99),
+        (15004,123456789, 7,0.00, 25);
+
+STG_CONVERSION_ORDER_MASTER
+insert into eBooks2go.BLC_CONVERSION_ORDER_MASTER(CONVERSION_ORDER_ID,ID)
+VALUES 
+        (4000, 90),
+        (4001, 50),
+        (4002, 525),
+        (4003, 39),
+        (4004, 725);
+        
+STG_BPM_CLIENT_INFO
+insert into eBooks2go.BPM_client_info (CLIENTID, company_name,date,ADDRESS, CITY, STATE, COUNTRY, ZIP, PHONE,fax, EMAIL,w9number)
+VALUES 
+        (500,'Denver Corp',current_timestamp, '2727 W. SYCAMORE AVE', 'NEW YORK CITY', 'NY' , 'US',33125,9223592235,'','laila@gmail.com',''),
+        (501,'Armenia INC',current_timestamp, '724 E 800 N', 'SALT LAKE CITY', 'UT' , 'US',80805,2259235216,2259235216,'KIYO@YAHOO.com',''),
+        (502,'Ladder Publishing',current_timestamp, '525 3/D VIJAY COLONY ', 'HYDERABAD', 'TN' , 'IN',500052,27536191,'','chiru@gmail.com',''),
+        (503,'Hogsmeade ',current_timestamp, '762 N MENTOR LN', 'LOMBARD', 'MN' , 'US',93634,8935367824,8935367824,'JANE.ROWDER56@gmail.com',''),
+        (504,'Bailey', current_timestamp,'9TH ST APT 56', 'BOSTON', 'MA' , 'US',72539,9160136455,'','BRAIDY@gmail.com','');
+
+STG_BLC_CUSTOMER
+INSERT INTO eBooks2go.BLC_CUSTOMER (CUSTOMER_ID,DATE_CREATED,FIRST_NAME,LAST_NAME,ADDRESS_LINE1, CITY, STATE, COUNTRY, ZIP, PHONE, EMAIL_address)
+VALUES
+        (1400000, current_timestamp,'LIMPY','DIMDIM', '1500 N DUBA RD', 'STATA',52 ,137, 28506,2946143847,'DIMDIML@gmail.com'),
+        (1400001, current_timestamp,'SADIA','STATUM', '355 RAWMEN', 'BODER', 52 , 137, 92543,9165347925,'STATUM88@AOL.com'),
+        (1400002, current_timestamp,'LAILA','JACKSON', 'W. PERCY ST APT 269', 'DINGO',54 ,137, 20340-1198,5543849270,'JACKSON92@gmail.com'),
+        (1400003, current_timestamp,'VICTOR','STROOD', '8934 WESTERDAM RD', 'PRADA',58 ,137, 02367,2890315409,'VJAMMER.55SINGER@gmail.INFO'),
+        (1400004, current_timestamp,'SAM','','',' ',49 ,137, 254617,8913680932,'LDARTHYMODE@gmail.com');
+
+
+delete from eBooks2go.BLC_CUSTOMER 
+where CUSTOMER_ID = 140000 or CUSTOMER_ID = 1400001 or CUSTOMER_ID = 1400002 or CUSTOMER_ID = 1400003 or CUSTOMER_ID = 1400004;
+
+delete from eBooks2go.BPM_client_info 
+where CLIENTID = 500 or CLIENTID = 501 or CLIENTID = 502 or CLIENTID = 503 or CLIENTID = 504;
+
+delete from eBooks2go.BLC_CONVERSION_ORDER_MASTER 
+where CONVERSION_ORDER_ID = 4000 or CONVERSION_ORDER_ID = 4001 or CONVERSION_ORDER_ID = 4002 or CONVERSION_ORDER_ID = 4003 or CONVERSION_ORDER_ID = 4004;
+
+delete from eBooks2go.BLC_DISTRIBUTION_ORDERINFO 
+where DISTRIBUTION_ORDERINFO_ID = 15000 or DISTRIBUTION_ORDERINFO_ID = 15001 or DISTRIBUTION_ORDERINFO_ID = 15002 or DISTRIBUTION_ORDERINFO_ID = 15003 or DISTRIBUTION_ORDERINFO_ID = 15004;
+
+delete from eBooks2go.BLC_ORDER 
+where ORDER_ID = 9000 or ORDER_ID = 9001 or ORDER_ID = 9002 or ORDER_ID = 9003 or ORDER_ID = 9004;
+
+delete from eBooks2go.BLC_SALESREPORTS 
+where Customer_id = 122222 or Customer_id = 122223 or Customer_id = 122224 or Customer_id = 122225 or Customer_id = 122226;
+
+delete from eBooks2go.BLC_SALESREPORTS 
+where SALES_ID = 122222 or SALES_ID = 122223 or SALES_ID = 122224 or SALES_ID = 122225 or SALES_ID = 122226;
+
+delete from eBooks2go.CRM_Customer 
+where SALES_ID = 11620 or SALES_ID = 11621 or SALES_ID = 11622 or SALES_ID = 11623 or SALES_ID = 11624;
+
+delete from eBooks2go.BLC_COUNTRIES 
+where COUNTRY_ID = 204 or COUNTRY_ID = 205 or COUNTRY_ID = 206 or COUNTRY_ID = 207 or COUNTRY_ID = 208;
+
+delete from eBooks2go.BLC_STATES 
+where STATE_ID = 4001 or STATE_ID = 4002 or STATE_ID = 4003 or STATE_ID = 4004 or STATE_ID = 4005;
+
+delete from eBooks2go.BLC_STORES 
+where STORE_ID = 16 or STORE_ID = 17 or STORE_ID = 18 or STORE_ID = 19 or STORE_ID = 20;
+
+select *  from stg_BLC_CUSTOMER 
+where CUSTOMER_ID = 1400000 or CUSTOMER_ID = 1400001 or CUSTOMER_ID = 1400002 or CUSTOMER_ID = 1400003 or CUSTOMER_ID = 1400004;
+
+select *  from  stg_BPM_client_info 
+where CLIENTID = 500 or CLIENTID = 501 or CLIENTID = 502 or CLIENTID = 503 or CLIENTID = 504;
+
+select *  from stg_CONVERSION_ORDER_MASTER 
+where CONVERSION_ORDER_ID = 4000 or CONVERSION_ORDER_ID = 4001 or CONVERSION_ORDER_ID = 4002 or CONVERSION_ORDER_ID = 4003 or CONVERSION_ORDER_ID = 4004;
+
+select *  from stg_DISTRIBUTION_ORDERINFO 
+where DISTRIBUTION_ORDERINFO_ID = 15000 or DISTRIBUTION_ORDERINFO_ID = 15001 or DISTRIBUTION_ORDERINFO_ID = 15002 or DISTRIBUTION_ORDERINFO_ID = 15003 or DISTRIBUTION_ORDERINFO_ID = 15004;
+
+select *  from stg_ORDER 
+where ORDER_ID = 9000 or ORDER_ID = 9001 or ORDER_ID = 9002 or ORDER_ID = 9003 or ORDER_ID = 9004;
+
+select *  from stg_SALESREPORTS 
+where SALES_ID = 122222 or SALES_ID = 122223 or SALES_ID = 122224 or SALES_ID = 122225 or SALES_ID = 122226;
+
+select *  from stg_CRM_Customer 
+where Customer_id = 11620 or Customer_id = 11621 or Customer_id = 11622 or Customer_id = 11623 or Customer_id = 11624;
+
+select *  from stg_countries 
+where COUNTRY_ID = 204 or COUNTRY_ID = 205 or COUNTRY_ID = 206 or COUNTRY_ID = 207 or COUNTRY_ID = 208;
+
+select *  from stg_states 
+where STATE_ID = 4001 or STATE_ID = 4002 or STATE_ID = 4003 or STATE_ID = 4004 or STATE_ID = 4005;
+
+select *  from stg_STORES 
+where STORE_ID = 16 or STORE_ID = 17 or STORE_ID = 18 or STORE_ID = 19 or STORE_ID = 20;
+
+
+
