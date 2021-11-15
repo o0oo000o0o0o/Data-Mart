@@ -25,7 +25,7 @@ f.     Sales by Channel
 g.   Best Distribution Channels
 
 ### Dimensional Data Modelling
-A star schema was created to obtain an intuitive and high performance data access. Fact and dimensional tables are generated as analytical measurables and their descriptive constraints respectively, by following data modelling best practices (https://docs.microsoft.com/en-us/power-query/dataflows/best-practices-for-dimensional-model-using-dataflows). The model is optimized by adding basic reference tables that support the descriptive dimensions.  A physical model is built in PostgreSQL using the work done so far.(see XXX for schema image). 
+A star schema was created to obtain an intuitive and high performance data access. Fact and dimensional tables are generated as analytical measurables and their descriptive constraints respectively, by following data modelling best practices (https://docs.microsoft.com/en-us/power-query/dataflows/best-practices-for-dimensional-model-using-dataflows). The model is optimized by adding basic reference tables that support the descriptive dimensions.  A physical model is built in PostgreSQL using the work done so far.(see https://github.com/o0oo000o0o0o/Data-Mart/blob/main/Snowflake%20Schema.png for schema image). 
 
 ### Data Extraction and Transformation
  
