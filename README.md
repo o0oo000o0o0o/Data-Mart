@@ -35,6 +35,9 @@ With the source profiling document, a source to target mapping document was gene
 
 Within the merged customer data, some cases exist where duplicate entries are recorded between the sources where the customer has few attributes recorded in one source, and updated/added afresh in another source. In this case, a golden record logic was written to transform and integrate customer data to generate an ideal record for that customer that stores consistent information. The logic was written on the basis of data quality dimensions like accuracy, completeness, relevancy, and uniformity per attribute of the record. 
 
+### Data Load
+
+Final destination for the overall data is the data warehouse. Using the mapping document constructed earlier, all curated fact and dimension tables from staging are loaded into the physical data warehouse model in PostgreSQL. The master customer table designed above uses the transformed customer tables taken from three different sources, to load the golden records generated into its respective table in the data warehouse. A log table was created that records counts of records in source versus target tables.
 
 ### ETL Automation
-By using Apache Airflow to schedule the automation of the ETL pipeline we were successfully able to move the historical data from staging to our data warehouse. The same cleaning process was used in our second pipeline which was to handle all incremental (future) data. 
+By using Apache Airflow, we successfully implemented the automation of the end-to-end ETL pipeline for historical data. Airflow dags were scheduled to handle all incremental data on a monthly basis. 
